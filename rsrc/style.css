@@ -1,0 +1,74 @@
+:root {
+    --color-background: rgb(27, 27, 30);
+    --color-highlight: rgb(204, 33, 30);
+    --color-text: rgb(180, 180, 180);
+    --color-comment: rgb(140, 140, 140);
+}
+
+html, body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: monospace;
+    font-size: 16px;
+}
+
+main {
+    width: 700px;
+    margin: 100px auto 50px auto;
+}
+
+@media screen and (max-width: 750px) {
+    main {
+        width: 90%;
+    }
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 15px 0px 15px 0px;
+    text-transform: lowercase;
+}
+
+h1::before {
+    content: "> ";
+}
+
+p {
+    margin: 15px 0px 15px 0px;
+}
+
+a,
+a:visited,
+.highlight {
+    text-decoration: none;
+    color: var(--color-highlight);
+}
+
+a:active,
+a:hover {
+    text-decoration: underline;
+}
+
+.desc {
+    padding-left: 20px;
+    display: block;
+}
+
+.comment {
+    color: var(--color-comment);
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.indent {
+    padding-left: 1em;
+}

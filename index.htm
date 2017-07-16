@@ -61,7 +61,7 @@
       var _TICK = 50,
           _STEP = 10;
 
-      var map = v => Math.min(Math.max(v, 30), 204);
+      const clamp = v => Math.min(Math.max(v, 30), 204);
 
       document.getElementById("p").addEventListener("click", function() {
         if (party)
@@ -70,27 +70,27 @@
           anim = setInterval(function() {
             switch (mode) {
               case 0:
-                var n = col.b + _STEP; col.b = map(n);
+                var n = col.b + _STEP; col.b = clamp(n);
                 if (n > col.b) mode++;
                 break;
               case 1:
-                var n = col.r - _STEP; col.r = map(n);
+                var n = col.r - _STEP; col.r = clamp(n);
                 if (n < col.r) mode++;
                 break;
               case 2:
-                var n = col.g + _STEP; col.g = map(n);
+                var n = col.g + _STEP; col.g = clamp(n);
                 if (n > col.g) mode++;
                 break;
               case 3:
-                var n = col.b - _STEP; col.b = map(n);
+                var n = col.b - _STEP; col.b = clamp(n);
                 if (n < col.b) mode++;
                 break;
               case 4:
-                var n = col.r + _STEP; col.r = map(n);
+                var n = col.r + _STEP; col.r = clamp(n);
                 if (n > col.r) mode++;
                 break;
               case 5:
-                var n = col.g - _STEP; col.g = map(n);
+                var n = col.g - _STEP; col.g = clamp(n);
                 if (n < col.g) mode++;
                 break;
               default: mode = 0;

@@ -60,6 +60,7 @@
       var col = {r: 204, g: 33, b: 30};
       var _TICK = 50,
           _STEP = 10;
+      var rotation = 0;
 
       const clamp = v => Math.min(Math.max(v, 30), 204);
 
@@ -96,11 +97,17 @@
               default: mode = 0;
             }
 
+            rotation += randomInt(45);
+            document.documentElement.style.setProperty("--party-level", String(rotation) + "deg");
             document.documentElement.style.setProperty("--color-highlight", "rgb(" + col.r + ", " + col.g + ", " + col.b + ")");
           }, _TICK);
 
         party = !party;
       });
+
+      function randomInt(upTo) {
+        return Math.floor(Math.random() * upTo);
+      }
     </script>
   </body>
 </html>

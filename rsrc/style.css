@@ -3,6 +3,7 @@
     --color-highlight: rgb(204, 33, 30);
     --color-text: rgb(180, 180, 180);
     --color-comment: rgb(140, 140, 140);
+    --party-level: 0;
 }
 
 html, body {
@@ -16,6 +17,7 @@ html, body {
 main {
     width: 700px;
     margin: 100px auto 50px auto;
+    transform: rotate(var(--party-level));
 }
 
 @media screen and (max-width: 750px) {
